@@ -117,7 +117,9 @@ static int ums_init(const char *devtype, const char *devnums_part_str)
 		name = malloc(UMS_NAME_LEN);
 		if (!name)
 			goto cleanup;
-		snprintf(name, UMS_NAME_LEN, "UMS disk %d", ums_count);
+		/* host-visible name: was "Linux UMS disk 0 device" */
+		snprintf(name, UMS_NAME_LEN, "AtriStation USB Mode %d",
+			 ums_count);
 		ums[ums_count].name = name;
 		ums[ums_count].block_dev = *block_dev;
 		ums[ums_count].hwpart = block_dev->hwpart;

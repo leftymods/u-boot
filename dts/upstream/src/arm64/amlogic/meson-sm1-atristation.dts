@@ -544,9 +544,12 @@
 	pinctrl-names = "default";
 };
 
+/* USB: mirror sei610 — plain host-mode glue. Do NOT gate the glue probe on
+ * a vbus regulator here: GPIOH_6 enable fails at u-boot stage and aborts
+ * the whole controller (Linux handles vbus sequencing itself). */
 &usb {
 	status = "okay";
-	vbus-supply = <&usb_pwr_en>;
+	dr_mode = "otg";
 };
 
 &usb2_phy0 {

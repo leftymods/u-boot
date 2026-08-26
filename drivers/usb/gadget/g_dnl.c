@@ -43,7 +43,17 @@
 
 #define DRIVER_VERSION		"usb_dnl 2.0"
 
+/* honor board config; was hardcoded "USB download gadget" */
+#ifdef CONFIG_USB_GADGET_PRODUCT_STRING
+static const char product[] = CONFIG_USB_GADGET_PRODUCT_STRING;
+#else
+/* honor board config; was hardcoded "USB download gadget" */
+#ifdef CONFIG_USB_GADGET_PRODUCT_STRING
+static const char product[] = CONFIG_USB_GADGET_PRODUCT_STRING;
+#else
 static const char product[] = "USB download gadget";
+#endif
+#endif
 static char g_dnl_serial[MAX_STRING_SERIAL];
 static const char manufacturer[] = CONFIG_USB_GADGET_MANUFACTURER;
 

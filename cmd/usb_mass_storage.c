@@ -118,7 +118,7 @@ static int ums_init(const char *devtype, const char *devnums_part_str)
 		if (!name)
 			goto cleanup;
 		/* host-visible name (was "Linux UMS disk 0 device") */
-		strlcpy(name, "Atristation UMS Mode", UMS_NAME_LEN);
+		strlcpy(name, "AtriOS UMS mode", UMS_NAME_LEN);
 		ums[ums_count].name = name;
 		ums[ums_count].block_dev = *block_dev;
 		ums[ums_count].hwpart = block_dev->hwpart;

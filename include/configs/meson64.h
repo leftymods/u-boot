@@ -151,6 +151,8 @@
 	"stderr=" STDOUT_CFG "\0" \
 	"kernel_comp_addr_r=" KERNEL_COMP_ADDR_R "\0" \
 	"kernel_comp_size=0x2000000\0" \
+	"fdt_high=0xffffffffffffffff\0" \
+	"initrd_high=0xffffffffffffffff\0" \
 	"fdt_addr_r=" FDT_ADDR_R "\0" \
 	"scriptaddr=" SCRIPT_ADDR_R "\0" \
 	"kernel_addr_r=" KERNEL_ADDR_R "\0" \
